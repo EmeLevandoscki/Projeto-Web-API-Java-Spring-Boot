@@ -6,7 +6,7 @@
 }
 
 /* Corpo com fundo gradiente animado */
-body {
+body.light {
   font-family: Arial, sans-serif;
   height: 100vh;
   display: flex;
@@ -59,7 +59,7 @@ input {
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 15px;
+  border-radius: 8px;
   transition: border-color 0.2s;
 }
 
@@ -82,4 +82,74 @@ button {
 
 button:hover {
   background-color: #574fd6;
+}
+
+
+/* Tema escuro refinado */
+/* Tema escuro com fundo gradiente animado */
+body.dark {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0f0f11, #1c1c1e, #2a2a2e, #1a1a1d);
+  background-size: 400% 400%;
+  animation: gradientDark 15s ease infinite;
+  color: #e6e6e6;
+}
+@keyframes gradientDark {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+body.dark .box {
+  background-color: #18191a;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+}
+
+body.dark h1 {
+  color: #f0f0f0;
+}
+
+body.dark input {
+  background-color: #242526;
+  color: #e6e6e6;
+  border: 1px solid #3a3b3c;
+}
+
+body.dark input::placeholder {
+  color: #999;
+}
+
+body.dark button {
+  background-color: #2563eb;
+}
+
+body.dark button:hover {
+  background-color: #1e50c2;
+}
+
+/* Botão de alternar tema (ícone apenas) */
+#toggle-theme {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+body.dark #toggle-theme {
+  color: #f1f1f1;
 }

@@ -3,6 +3,18 @@ const Inome = document.querySelector(".nome");
 const Iemail = document.querySelector(".email");
 const Isenha = document.querySelector(".senha");
 const Itel = document.querySelector(".tel");
+const toggleBtn = document.getElementById('toggle-theme');
+const body = document.body;
+
+toggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark');
+
+  if (body.classList.contains('dark')) {
+    toggleBtn.textContent = '☀️  ';
+  } else {
+    toggleBtn.textContent = '🌙 ';
+  }
+});
 
 
 function cadastrar(){
