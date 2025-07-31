@@ -16,7 +16,7 @@ public class usuario {
     @Column(name ="id")
     private Integer id;
 
-     @Column(name = "nome_completo")  // Altere para 'nome_completo'
+     @Column(name = "nome_completo")  
     private String nomeCompleto;
 
     public String getNomeCompleto() {
@@ -26,6 +26,8 @@ public class usuario {
      public void setNomeCompleto(String nomeCompleto) {
          this.nomeCompleto = nomeCompleto;
      }
+
+     
     @Column(name ="email", length = 50, nullable = true)
     private String email;
 
