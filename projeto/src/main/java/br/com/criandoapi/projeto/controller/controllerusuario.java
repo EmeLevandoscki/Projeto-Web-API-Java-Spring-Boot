@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.criandoapi.projeto.DAO.IUsuario;
 import br.com.criandoapi.projeto.model.usuario;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+/*import org.springframework.web.bind.annotation.PathVariable;>*/
+
 
 
 
@@ -31,5 +34,12 @@ public class controllerusuario {
         usuario usuarioNovo = dao.save(usuariO);
         return usuarioNovo;
     }
+
+    @PutMapping
+    public usuario editUsuario (@RequestBody usuario usuario){
+        usuario usuarioNovo = dao.save(usuario);
+        return usuarioNovo;
+    }
+    
 }
  
