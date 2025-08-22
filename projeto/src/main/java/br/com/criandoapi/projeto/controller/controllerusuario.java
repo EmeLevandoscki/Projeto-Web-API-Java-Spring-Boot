@@ -3,6 +3,8 @@ package br.com.criandoapi.projeto.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,12 +15,15 @@ import br.com.criandoapi.projeto.DAO.IUsuario;
 import br.com.criandoapi.projeto.model.usuario;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 /*import org.springframework.web.bind.annotation.PathVariable;>*/
 
 
 
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/usuarios")
 public class controllerusuario {
 
@@ -40,6 +45,14 @@ public class controllerusuario {
         usuario usuarioNovo = dao.save(usuario);
         return usuarioNovo;
     }
+
+    @DeleteMapping("/{id}")
+    public usuario excluirUsuario(@PathVariable int id) {
+    usuario Usuario = dao.findById(id).get(); 
+    dao.deleteById(id);
+    return Usuario;
+}
+
     
 }
  
